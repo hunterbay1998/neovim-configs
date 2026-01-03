@@ -24,5 +24,9 @@ require("lazy").setup({
   require("plugins.statusline"),
   require("plugins.telescope"),
   require("plugins.completion"),
+  require("plugins.autopairs"),
+  require("plugins.neo-tree"),
+  require("plugins.toggleterm"),
+
 
 })
