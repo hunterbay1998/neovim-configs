@@ -5,7 +5,7 @@
 -- Core
 require("core.basics")
 require("core.options")
-
+require("core.autocmds")
 -- Keymaps
 require("keymaps")
 
