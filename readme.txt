@@ -19,3 +19,14 @@ sudo pacman -S --needed \
 :TSUpdate
 :checkhealth nvim-treesitter
 
+
+| Thing             | Where it goes            |
+| ----------------- | ------------------------ |
+| Line numbers      | `core/options.lua`       |
+| Clipboard default | `core/basics.lua`        |
+| `d` doesn’t copy  | `keymaps/editing.lua`    |
+| Treesitter        | `plugins/treesitter.lua` |
+| Bash LSP          | `plugins/lsp.lua`        |
+| `<leader>ff`      | `keymaps/telescope.lua`  |
+| Theme             | `plugins/theme.lua`      |
+

@@ -4,10 +4,12 @@
 ---------------------------------------------------------------------
 -- Core
 require("core.basics")
+require("core.options")
 
 -- Keymaps
 require("keymaps")
 
 -- Plugins
 require("plugins.lazy")
+
 
