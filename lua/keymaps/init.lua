@@ -3,3 +3,4 @@
 ---------------------------------------------------------------------
 
 require("keymaps.editing")
+require("keymaps.telescope")

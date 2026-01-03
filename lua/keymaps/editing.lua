@@ -1,9 +1,9 @@
----------------------------------------------------------------------
--- Editing keymaps
----------------------------------------------------------------------
+-- lua/keymaps/telescope.lua
 
--- Don’t overwrite clipboard when deleting
-vim.keymap.set({ "n", "v" }, "d", '"_d', { silent = true })
-vim.keymap.set({ "n", "v" }, "D", '"_D', { silent = true })
-vim.keymap.set({ "n", "v" }, "x", '"_x', { silent = true })
-vim.keymap.set({ "n", "v" }, "X", '"_X', { silent = true })
+-- We use "<cmd>" commands. This works even if the plugin loads later.
+-- No complex "pcall" or checks needed.
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>",  { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>",    { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>",  { desc = "Help Tags" })
