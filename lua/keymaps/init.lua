@@ -4,4 +4,4 @@
 
 require("keymaps.editing")
 require("keymaps.telescope")
-require("keymaps.neo-tree toggle")
+require("keymaps.neo-tree")
