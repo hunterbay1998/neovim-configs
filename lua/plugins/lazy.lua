@@ -22,13 +22,14 @@ require("lazy").setup({
   require("plugins.lsp"),
   require("plugins.theme"),
   require("plugins.statusline"),
+  require("plugins.indent"),
+  require("plugins.notify"),
+  require("plugins.noice"),
   require("plugins.telescope"),
   require("plugins.completion"),
   require("plugins.autopairs"),
   require("plugins.neo-tree"),
   require("plugins.toggleterm"),
-  require("plugins.indent"),
-
 
 
 })

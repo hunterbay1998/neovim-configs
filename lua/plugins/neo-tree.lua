@@ -1,3 +1,7 @@
+---------------------------------------------------------------------
+-- File explorer: neo-tree (cleaner visuals + nicer behaviour)
+---------------------------------------------------------------------
+
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -9,20 +13,62 @@ return {
     },
     config = function()
       require("neo-tree").setup({
+        close_if_last_window = true,
+
+        default_component_configs = {
+          indent = {
+            indent_size = 2,
+            padding = 1,
+            with_markers = true,
+            indent_marker = "│",
+            last_indent_marker = "└",
+            expander_collapsed = "",
+            expander_expanded = "",
+          },
+          icon = {
+            folder_closed = "",
+            folder_open = "",
+            folder_empty = "",
+          },
+          modified = { symbol = "●" },
+          git_status = {
+            symbols = {
+              added = "✚",
+              modified = "",
+              deleted = "✖",
+              renamed = "󰁕",
+              untracked = "",
+              ignored = "",
+              unstaged = "󰄱",
+              staged = "",
+              conflict = "",
+            },
+          },
+        },
+
         filesystem = {
+          follow_current_file = { enabled = true },
+          group_empty_dirs = true,
+          hijack_netrw_behavior = "open_default",
           filtered_items = {
             hide_dotfiles = false,
             hide_gitignored = false,
           },
         },
+
+        git_status = { enabled = true },
+
         window = {
           position = "left",
-          width = 30,
+          width = 32,
           mappings = {
-            ["l"] = "open",       -- expand folder / open file
-            ["h"] = "close_node", -- collapse folder
+            ["l"] = "open",
+            ["h"] = "close_node",
+            ["<space>"] = "toggle_node",
           },
         },
+
+        popup_border_style = "rounded",
       })
     end,
   },
