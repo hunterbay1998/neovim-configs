@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------
--- Statusline: lualine (clean + calm)
+-- Statusline: lualine (clean + minimal)
 ---------------------------------------------------------------------
 
 return {
@@ -13,13 +13,34 @@ return {
         globalstatus = true,
         section_separators = "",
         component_separators = "│",
-        disabled_filetypes = { statusline = { "neo-tree", "NvimTree", "dashboard" } },
+        disabled_filetypes = {
+          statusline = { "neo-tree", "NvimTree", "lazy" },
+        },
       },
+
       sections = {
-        lualine_a = { { "mode", fmt = function(s) return s:sub(1, 1) end } },
-        lualine_b = { "branch", "diff" },
-        lualine_c = { { "filename", path = 1, symbols = { modified = " ●", readonly = " " } } },
-        lualine_x = { { "diagnostics" }, "filetype" },
+        lualine_a = {
+          {
+            "mode",
+            fmt = function(str) return str:sub(1, 1) end,
+          },
+        },
+        lualine_b = { "branch" },
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+            symbols = {
+              modified = " ●",
+              readonly = " ",
+              unnamed = "",
+            },
+          },
+        },
+        lualine_x = {
+          { "diagnostics", sources = { "nvim_lsp" } },
+          "filetype",
+        },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
